@@ -12,25 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body >
-    <header>
-	   <nav class="navbar navbar-expand-md bg-body-tertiary">
-         <div class=" container-md ">
-            <h4 >
-		       Best of 
-	        </h4>            
-            <div class="collapse navbar-collapse mx-4" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-					<button type="button" class="btn btn-success mx-4 btn-sm " style="height: 30px;width: 130px;"
-					    th:insert = "fragment :: button('/', 'Home Page')"
-					>
-						Home Page
-					</button>
-                </div>
-             </div>
-          </div>
-        </nav>
-	</header>
-	
+    <header th:insert="headerHome :: headerHome"/>	
 	<main>
 	  <div class="container">
 			<h2 class="text-center">
@@ -51,6 +33,6 @@
         </div>
 	</main>
 	<!-- Bootstrap Bundle with Popper -->
-         <script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

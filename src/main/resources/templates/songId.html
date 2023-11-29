@@ -12,29 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body >
-    <header>
-	   <nav class="navbar navbar-expand-md bg-body-tertiary">
-         <div class=" container-md ">
-            <h4 >
-		       Best of 
-	        </h4>            
-            <div class="collapse navbar-collapse mx-4" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-					<button type="button" class="btn btn-success mx-4 btn-sm" style="height: 30px;width: 90px;"
-					    th:insert = "fragment :: button('/movies', 'Movies')"
-					>
-					    Movies
-					</button>
-                    <button type="button" class="btn btn-success btn-sm"  style="height: 30px;width: 90px;"
-						th:insert = "fragment :: button('/songs', 'Songs')"
-					>
-					    Songs
-					</button>
-                </div>
-             </div>
-          </div>
-        </nav>
-	</header>
+    <header th:insert="header :: header"/>
 	
 	<main>
 	  <div class="container">

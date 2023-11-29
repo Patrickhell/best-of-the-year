@@ -12,25 +12,7 @@
 <title>Insert title here</title>
 </head>
 <body >
-    <header>
-	   <nav class="navbar navbar-expand-md bg-body-tertiary">
-         <div class=" container-md ">
-            <h4>
-		       Best of 
-	        </h4>            
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-					<button type="button" class="btn btn-success btn-sm" style="height: 30px;width: 130px;"
-					    th:insert = "fragment :: button('/', 'Home Page')"
-					>
-						Home Page
-					</button>
-                </div>
-             </div>
-          </div>
-        </nav>
-	</header>
-	
+    <header th:insert="headerHome :: headerHome"/>	
 	<main>
 	  <div class="container">
 			<h2 class="text-center">

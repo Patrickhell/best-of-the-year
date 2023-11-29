@@ -1,15 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+
+<!-- CSS -->
+<link rel="stylesheet" th:href="@{/css/style.css}">
 <title>Insert title here</title>
 </head>
 <body >
+    <header>
+	   <nav class="navbar navbar-expand-md bg-body-tertiary">
+         <div class=" container-md ">
+            <h4>
+		       Best of 
+	        </h4>            
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+					<button type="button" class="btn btn-success btn-sm" style="height: 30px;width: 130px;"
+					    th:insert = "fragment :: button('/', 'Home Page')"
+					>
+						Home Page
+					</button>
+                </div>
+             </div>
+          </div>
+        </nav>
+	</header>
 	
-	<h1>Movies</h1>
-	
-	<h2> Lista di tutti i migliori film: </h2>
-	<p th:text="${moviesList}"></p>
-	
+	<main>
+	  <div class="container">
+			<h2 class="text-center">
+				Best Movies
+			</h2>
+			<div class="card" style="width: 18rem;">
+                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item" style="color: aliceblue;"
+                        th:each="movie : ${movies}"
+					>
+					    <a th:href="@{/movies/{id}(id=${movie.id})}" th:text="${movie.title}">
+				         [[${movie.title}]]				
+			            </a>
+					</li> 
+                    
+                  </ul>
+             </div>
+        </div>
+	</main>
+	<!-- Bootstrap Bundle with Popper -->
+         <script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

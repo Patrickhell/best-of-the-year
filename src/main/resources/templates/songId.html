@@ -1,14 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}"/>
+
+<!-- CSS -->
+<link rel="stylesheet" th:href="@{/css/style.css}">
 <title>Insert title here</title>
 </head>
 <body >
-	<h1>
-		
-		<p th:text ="${songId}"></p>
-	</h1>
+    <header>
+	   <nav class="navbar navbar-expand-md bg-body-tertiary">
+         <div class=" container-md ">
+            <h4 >
+		       Best of 
+	        </h4>            
+            <div class="collapse navbar-collapse mx-4" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+					<button type="button" class="btn btn-success mx-4 btn-sm" style="height: 30px;width: 90px;"
+					    th:insert = "fragment :: button('/movies', 'Movies')"
+					>
+					    Movies
+					</button>
+                    <button type="button" class="btn btn-success btn-sm"  style="height: 30px;width: 90px;"
+						th:insert = "fragment :: button('/songs', 'Songs')"
+					>
+					    Songs
+					</button>
+                </div>
+             </div>
+          </div>
+        </nav>
+	</header>
 	
+	<main>
+	  <div class="container">
+			<h2 class="text-center">
+				Song
+			</h2>
+			<div class="card" style="width: 18rem;">
+                 <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+						<span th:text ="${songId}"></span>
+					</li> 
+                    
+                  </ul>
+             </div>
+        </div>
+	</main>
+	<!-- Bootstrap Bundle with Popper -->
+         <script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
